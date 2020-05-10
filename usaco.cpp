@@ -1,6 +1,10 @@
 /*
- * honestly I was just implementing this code to make sure that the solution is right , but I thought it is a Tle code but surprisingly it passed
- * http://usaco.org/current/data/sol_mooriokart_platinum_feb19.html
+ * honestly I was just implementing this code to make sure that the solution is right , I thought it is a Tle code but surprisingly it passed
+ * first lets know that the ordering of the trees is not important 
+ * the problem is actually , choose a path from every tree so the total is more than Y
+ * so first for every tree find the number of paths with length <=y ( we consider a path of length >= y as y ) , and find the sum of paths for each length too
+ * now try a dp [K][Y] , with dp[i][j] = you are at the i'th tree , choose a path from the current tree such that the total path now is j 
+ * multiply dp[K][Y] with (K-1)! * 2 ^ k-1 to solve the ordering issue
 */
 #define fast ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #include <bits/stdc++.h>
